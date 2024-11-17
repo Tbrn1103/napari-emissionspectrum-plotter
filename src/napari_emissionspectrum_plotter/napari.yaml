@@ -1,0 +1,30 @@
+name: napari-emissionspectrum-plotter
+display_name: Emissionspectrum Plotter
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/manifest.html for valid categories
+categories: ["Annotation", "Segmentation", "Acquisition"]
+contributions:
+  commands:
+    - id: napari-emissionspectrum-plotter.make_container_widget
+      python_name: napari_emissionspectrum_plotter:ImageThreshold
+      title: Make threshold Container widget
+    - id: napari-emissionspectrum-plotter.make_magic_widget
+      python_name: napari_emissionspectrum_plotter:threshold_magic_widget
+      title: Make threshold magic widget
+    - id: napari-emissionspectrum-plotter.make_function_widget
+      python_name: napari_emissionspectrum_plotter:threshold_autogenerate_widget
+      title: Make threshold function widget
+    - id: napari-emissionspectrum-plotter.make_qwidget
+      python_name: napari_emissionspectrum_plotter:ExampleQWidget
+      title: Make example QWidget
+  widgets:
+    - command: napari-emissionspectrum-plotter.make_container_widget
+      display_name: Container Threshold
+    - command: napari-emissionspectrum-plotter.make_magic_widget
+      display_name: Magic Threshold
+    - command: napari-emissionspectrum-plotter.make_function_widget
+      autogenerate: true
+      display_name: Autogenerate Threshold
+    - command: napari-emissionspectrum-plotter.make_qwidget
+      display_name: Example QWidget
